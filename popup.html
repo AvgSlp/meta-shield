@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 220px;
+      font-family: Arial, sans-serif;
+      margin: 12px;
+      background: #f4f6f9;
+      color: #333;
+    }
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: opacity 0.3s ease, filter 0.3s ease;
+    }
+    /* This class gets added by javascript when turned off */
+    .card.disabled {
+      opacity: 0.6;
+      filter: grayscale(100%);
+    }
+    h3 { margin: 0 0 10px 0; color: #1a1a1a; font-size: 16px; }
+    .counter {
+      font-size: 32px;
+      font-weight: bold;
+      color: #d32f2f;
+      margin: 10px 0;
+    }
+    .status { font-size: 12px; color: #666; font-style: italic; margin-bottom: 15px; }
+    
+    .switch-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid #eee;
+    }
+    .switch-label { font-size: 13px; font-weight: bold; color: #555; }
+    .switch { position: relative; display: inline-block; width: 44px; height: 24px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+      background-color: #ccc; transition: .3s; border-radius: 24px;
+    }
+    .slider:before {
+      position: absolute; content: ""; height: 16px; width: 16px; left: 4px; bottom: 4px;
+      background-color: white; transition: .3s; border-radius: 50%;
+    }
+    input:checked + .slider { background-color: #2e7d32; }
+    input:checked + .slider:before { transform: translateX(20px); }
+  </style>
+</head>
+<body>
+  <!-- Added id="main-card" to target with JS -->
+  <div class="card" id="main-card">
+    <h3>Meta Shield</h3>
+    <div class="counter" id="block-count">0</div>
+    <div class="status">Hidden Trackers Blocked On This Page</div>
+    
+    <div class="switch-container">
+      <span class="switch-label">Shield Protection</span>
+      <label class="switch">
+        <input type="checkbox" id="shield-toggle" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
