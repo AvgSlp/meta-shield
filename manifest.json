@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Meta Shield",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "Catches Meta trackers red-handed and blocks them instantly.",
   "icons": {
     "128": "icon.png"
@@ -23,7 +23,7 @@
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "metashield-v2@yourdomain.local"
+      "id": "metashield-v2@avgslp"
     }
   }
 }
